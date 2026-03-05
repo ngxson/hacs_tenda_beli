@@ -187,12 +187,14 @@ class TendaBeliServer:
 
     async def handle_rendezvous_connection(self, reader, writer):
         """ Parse packets from plugs """
-        try: 
+        try:
             address, port = writer.get_extra_info('peername')
             _LOGGER.info(f"Plug {address} succesfully connected to rendezvous server")
+            await reader.read(1024)
             writer.write(bytes.fromhex(f"2400020000d2000e000000000000000000100004{self._prov_srv_ip}00110002{int(DEFAULT_PORT):04x}"))
+            writer.close()
         except Exception as err:
-            _LOGGER.info(f"Unexpected {err=}, {type(err)=} during rendezvous porting at {str(int(time.time()))} !")    
+            _LOGGER.info(f"Unexpected {err=}, {type(err)=} during rendezvous porting at {str(int(time.time()))} !")
 
     async def handle_provisioning_connection(self, reader, writer):
         """ Parse packets from plugs """
