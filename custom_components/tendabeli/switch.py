@@ -4,6 +4,7 @@ from .tenda import TendaBeliPlug, TendaBeliServer
 
 from homeassistant.components.switch import SwitchEntity
 from homeassistant.helpers.entity_registry import async_get
+from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
@@ -11,6 +12,10 @@ from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 from .const import DOMAIN, HUB
 
 _LOGGER = logging.getLogger(__name__)
+
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback) -> None:
+    await async_setup_platform(hass, {}, async_add_entities)
+
 
 async def async_setup_platform(
     hass: HomeAssistant,

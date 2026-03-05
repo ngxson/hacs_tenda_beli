@@ -1,0 +1,19 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tenda Beli SP9 Plug",
+        "description": "The integration will start a UDP server on your Home Assistant instance to receive data from Tenda Beli plugs. The IP below is your Home Assistant IP — change it only if auto-detection is wrong.",
+        "data": {
+          "listen_ip": "Home Assistant IP"
+        },
+        "data_description": {
+          "listen_ip": "The IP address of your Home Assistant instance. Plugs will send data to this address."
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Tenda Beli is already configured."
+    }
+  }
+}
