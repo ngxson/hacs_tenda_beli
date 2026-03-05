@@ -12,7 +12,9 @@ Entities are created automatically once a plug connects.
 
 ## Installation
 
-Install via HACS by adding this repository as a custom repository, then add the integration from **Settings → Devices & Services → Add Integration → Tenda Beli**.
+[![Open your Home Assistant instance and open the Tenda Beli integration inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ngxson&repository=hacs_tenda_beli&category=integration)
+
+Or manually: add this repository as a custom repository in HACS, then add the integration from **Settings → Devices & Services → Add Integration → Tenda Beli**.
 
 ## Provisioning a plug
 
