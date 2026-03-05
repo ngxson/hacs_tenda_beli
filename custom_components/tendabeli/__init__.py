@@ -43,7 +43,7 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     if unload_ok:
         tb: TendaBeli = hass.data[DOMAIN].pop("_instance", None)
         if tb:
-            tb.hub.stop()
+            tb.stop()
         hass.data.pop(DOMAIN, None)
     return unload_ok
 
